@@ -1,0 +1,5 @@
+0 sent 1000 to 2
+0 deposited 3000
+0 withdrew 3000
+0 sent 600 to 3
+3 sent 600 to 0

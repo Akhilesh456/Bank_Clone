@@ -24,6 +24,10 @@ class Account{
             cout << "WRONG PIN!!" << endl;
             return 0;
         }
+        if(this->money - money < 0){
+            cout << "Insufficient Funds!!" << endl;
+            return 0;
+        }
         this->money -= money;
         return 1;
     }

@@ -51,7 +51,7 @@ class Bank{
 
         void open_account(string name, short pin, double start_money){
             Account ac(name, pin, start_money);
-            // cout << "Your account number is: " << no_of_accounts++ << endl;
+            no_of_accounts++;
             accounts.push_back(ac);
         }
 
@@ -154,7 +154,7 @@ int main(){
             if(file.is_open())
                 file << name << " " << pin << " " << money << endl;
             file.close();
-            cout << "Your account number is: " << bank.no_of_accounts-1 << endl;
+            cout << "Your account number is: " << bank.no_of_accounts << endl;
             cout << "Your account has been opened!" << endl;
             cout << endl;
         // deposite money

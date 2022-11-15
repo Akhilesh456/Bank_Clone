@@ -167,10 +167,11 @@ int main(){
             cout << "Enter the money: ";
             cin >> money;
             bool check = bank.deposit(account_no, money);
-            if(file.is_open() && check)
+            if(file.is_open() && check){
                 file << account_no << " deposited " << money << endl;
+                cout << "Money deposited!" << endl;
+            }
             file.close();
-            cout << "Money deposited!" << endl;
             cout << endl;
         // withdraw money
         }else if(action == 3){
@@ -204,10 +205,11 @@ int main(){
             cout << "Enter your pin: ";
             cin >> pin;
             bool check = bank.transfer(sender_ac, receiver_ac, pin, money);
-            if(file.is_open() && check)
+            if(file.is_open() && check){
                 file << sender_ac << " sent " << money << " to " << receiver_ac << endl;
+                cout << "Transfered money" << endl;
+            }
             file.close();
-            cout << "Transfered money" << endl;
             cout << endl;
         // account details
         }else if(action == 5){

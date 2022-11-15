@@ -51,7 +51,7 @@ class Bank{
 
         void open_account(string name, short pin, double start_money){
             Account ac(name, pin, start_money);
-            cout << "Your account number is: " << no_of_accounts++ << endl;
+            // cout << "Your account number is: " << no_of_accounts++ << endl;
             accounts.push_back(ac);
         }
 
@@ -154,6 +154,7 @@ int main(){
             if(file.is_open())
                 file << name << " " << pin << " " << money << endl;
             file.close();
+            cout << "Your account number is: " << bank.no_of_accounts-1 << endl;
             cout << "Your account has been opened!" << endl;
             cout << endl;
         // deposite money
@@ -220,11 +221,29 @@ int main(){
             cout << endl;
         // history
         }else if(action == 6){
+            int account_no;
+            short Pin;
+            cout << "Enter your account number: ";
+            cin >> account_no;
+            cout << "Enter your pin: ";
+            cin >> Pin;
+            if(bank.accounts[account_no].pin != Pin){
+                cout << "Wrong Pin!" << endl;
+                continue;
+            }
             file.open("History.txt", ios::in);
             if(file.is_open()){
                 string line;
-                while (getline(file, line))
-                    cout << line << endl;
+                while (getline(file, line)){
+                    string temp="";
+                    for(auto i:line){
+                        if(i == ' ')
+                            break;
+                        temp += i;
+                    }
+                    if(stoi(temp) == account_no)
+                        cout << line << endl;
+                }
             }
             file.close();
             cout << endl;

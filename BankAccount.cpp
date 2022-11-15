@@ -154,7 +154,7 @@ int main(){
             if(file.is_open())
                 file << name << " " << pin << " " << money << endl;
             file.close();
-            cout << "Your account number is: " << bank.no_of_accounts << endl;
+            cout << "Your account number is: " << bank.no_of_accounts-1 << endl;
             cout << "Your account has been opened!" << endl;
             cout << endl;
         // deposite money

@@ -157,7 +157,7 @@ int main(){
             cout << "Your account number is: " << bank.no_of_accounts-1 << endl;
             cout << "Your account has been opened!" << endl;
             cout << endl;
-        // deposite money
+        // deposit money
         }else if(action == 2){
             int account_no;
             double money;
